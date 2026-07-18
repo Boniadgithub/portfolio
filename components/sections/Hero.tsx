@@ -153,7 +153,7 @@ function Line({ children, delay }: { children: React.ReactNode; delay: number })
       <motion.span
         initial={{ y: "110%" }}
         animate={{ y: "0%" }}
-        transition={{ duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
         className="block"
       >
         {children}
