@@ -37,7 +37,7 @@ export default function Skills() {
                         <motion.div
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.level}%` }}
-                          viewport={{ once: true, margin: "-10%" }}
+                          viewport={{ once: true, amount: 0.3 }}
                           transition={{
                             duration: 1,
                             delay: gi * 0.1 + i * 0.08,
