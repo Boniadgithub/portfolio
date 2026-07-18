@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { projects } from "@/lib/data";
 import MagneticButton from "@/components/ui/MagneticButton";
 import CaseStudySection from "@/components/sections/CaseStudySection";
+import Image from "next/image";
 
 
 export function generateStaticParams() {
@@ -73,15 +74,23 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </div>
 
         <div className="container-px mx-auto mt-16 max-w-5xl">
-          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-line">
-            <Image
-              src={project.cover}
-              alt={project.title}
-              fill
-              priority
-              className="object-cover"
-              sizes="(min-width: 1024px) 1024px, 100vw"
+          <div
+            className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-line"
+            style={{
+              background: `radial-gradient(circle at 30% 20%, ${project.color}33, transparent 60%), #111827`,
+            }}
+          >
+            <div
+              className="absolute inset-0 opacity-20"
+              style={{
+                backgroundImage:
+                  "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
+                backgroundSize: "48px 48px",
+              }}
             />
+            <span className="absolute bottom-6 right-8 font-display text-7xl font-semibold text-white/10">
+              {project.title}
+            </span>
           </div>
         </div>
       </header>

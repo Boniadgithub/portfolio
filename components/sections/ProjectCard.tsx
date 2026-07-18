@@ -26,13 +26,11 @@ export default function ProjectCard({
         className="card-hover group relative block overflow-hidden rounded-2xl border border-line bg-base-soft/40"
       >
         <div className="relative aspect-[4/3] overflow-hidden">
-          import Image from "next/image";
-
           <Image
-            src="/images/projects/seox.jpg"
-            alt="SEOX project"
-            width={800}
-            height={600}
+            src={project.cover}
+            alt={project.title}
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
           <span className="absolute bottom-4 right-5 font-display text-5xl font-semibold text-white/20">

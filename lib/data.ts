@@ -30,7 +30,7 @@ export const projects: Project[] = [
     year: "2026",
     role: "UI/UX Design, Landing Page Development",
     tagline: "An AI-powered SEO analytics platform, positioned as the calm command center for growth teams.",
-    cover: "/images/projects/seox-cover.jpg",
+    cover: "/images/projects/Seox.jpg",
     color: "#3B82F6",
     tech: ["Figma", "Next.js", "Tailwind CSS", "Framer Motion", "Python (mockup compositing)"],
     overview:
@@ -78,7 +78,7 @@ export const projects: Project[] = [
     year: "2025",
     role: "UI/UX Design, Mobile Mockups",
     tagline: "A full redesign of a fintech landing experience, rebuilt around trust, clarity, and modern banking conventions.",
-    cover: "/images/projects/dashen-cover.jpg",
+    cover: "/images/projects/hero section mockup.jpg",
     color: "#22C55E",
     tech: ["Figma", "SVG", "Python", "PIL / OpenCV"],
     overview:
@@ -125,7 +125,7 @@ export const projects: Project[] = [
     year: "2025",
     role: "Product Design, AI Prompt Engineering",
     tagline: "A voice-first clinical assistant designed to reduce documentation load without adding cognitive burden.",
-    cover: "/images/projects/medical-voice-cover.jpg",
+    cover: "/images/projects/AI medical.png",
     color: "#8B5CF6",
     tech: ["Figma", "Python", "Speech-to-text APIs", "Prompt Engineering"],
     overview:
@@ -172,7 +172,7 @@ export const projects: Project[] = [
     year: "2025",
     role: "UI/UX Design, Full-Stack Development",
     tagline: "A cross-university collaboration platform helping students from different institutions find and build projects together.",
-    cover: "/images/projects/knect-cover.jpg",
+    cover: "/images/projects/Knect.png",
     color: "#3B82F6",
     tech: ["Figma", "React", "Next.js", "FastAPI"],
     overview:
