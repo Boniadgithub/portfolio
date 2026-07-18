@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CustomCursor from "@/components/layout/CustomCursor";
 import SmoothScroll from "@/components/layout/SmoothScroll";
+import { Toaster } from "sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -83,6 +84,7 @@ export default function RootLayout({
           <main id="main">{children}</main>
           <Footer />
         </SmoothScroll>
+        <Toaster position="bottom-right" theme="dark" />
       </body>
     </html>
   );
