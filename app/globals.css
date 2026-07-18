@@ -68,14 +68,17 @@ body {
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--color-base);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--color-base-soft);
   border-radius: 999px;
   border: 2px solid var(--color-base);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #3b82f6;
 }
@@ -117,6 +120,7 @@ body {
   mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
+
 .dark .grain::after {
   mix-blend-mode: overlay;
 }
@@ -136,6 +140,7 @@ body {
 .card-hover {
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
 }
+
 .card-hover:hover {
   transform: translateY(-6px);
   border-color: rgba(59, 130, 246, 0.4);

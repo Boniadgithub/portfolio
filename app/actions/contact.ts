@@ -41,11 +41,10 @@ export async function sendContactEmail(formData: FormData) {
       return { success: true };
     }
 
-    // Send email via Resend
     const result = await resend.emails.send({
       from: "Portfolio Contact Form <onboarding@resend.dev>", // Or your verified domain
       to: "badugna643@gmail.com",
-      reply_to: email,
+      replyTo: email,
       subject: `New Portfolio Message: ${subject}`,
       html: `
         <h2>New Message from your Portfolio</h2>

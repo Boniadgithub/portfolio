@@ -10,12 +10,14 @@ export default function MagneticButton({
   href,
   onClick,
   variant = "primary",
+  disabled,
 }: {
   children: ReactNode;
   className?: string;
   href?: string;
   onClick?: () => void;
   variant?: "primary" | "secondary";
+  disabled?: boolean;
 }) {
   const ref = useRef<HTMLAnchorElement | HTMLButtonElement>(null);
   const [pos, setPos] = useState({ x: 0, y: 0 });
@@ -34,7 +36,7 @@ export default function MagneticButton({
   const styles = cn(
     "relative inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium transition-colors",
     variant === "primary"
-      ? "bg-white text-base hover:bg-ink-primary/"
+      ? "bg-ink-primary text-base hover:bg-ink-primary/90"
       : "border border-line text-ink-primary hover:border-accent",
     className
   );
@@ -68,10 +70,11 @@ export default function MagneticButton({
     <button
       ref={ref as React.RefObject<HTMLButtonElement>}
       onClick={onClick}
+      disabled={disabled}
       data-cursor-hover
-      onMouseMove={handleMouseMove}
+      onMouseMove={disabled ? undefined : handleMouseMove}
       onMouseLeave={reset}
-      className={styles}
+      className={cn(styles, disabled && "opacity-50 cursor-not-allowed pointer-events-none")}
     >
       {content}
     </button>
