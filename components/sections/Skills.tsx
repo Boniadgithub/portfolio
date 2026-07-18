@@ -19,7 +19,7 @@ export default function Skills() {
         <div className="mt-16 grid gap-6 lg:grid-cols-3">
           {groups.map((group, gi) => (
             <GlassCard key={group} className="border-line">
-              <h3 className="font-display text-lg font-semibold text-white">
+              <h3 className="font-display text-lg font-semibold text-ink-primary">
                 {group}
               </h3>
               <div className="mt-6 space-y-5">
@@ -33,7 +33,7 @@ export default function Skills() {
                           {skill.level}%
                         </span>
                       </div>
-                      <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/5">
+                      <div className="h-1.5 w-full overflow-hidden rounded-full bg-ink-primary/">
                         <motion.div
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.level}%` }}

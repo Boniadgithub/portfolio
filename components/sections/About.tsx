@@ -56,7 +56,7 @@ export default function About() {
                 <span className="font-mono text-xs text-accent">
                   0{i + 1}
                 </span>
-                <h3 className="mt-3 font-display text-xl font-semibold text-white">
+                <h3 className="mt-3 font-display text-xl font-semibold text-ink-primary">
                   {p.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-secondary">

@@ -21,7 +21,7 @@ export default function CaseStudySection({
     >
       <div>
         <p className="eyebrow">{eyebrow}</p>
-        <h2 className="mt-3 font-display text-2xl font-semibold text-white">
+        <h2 className="mt-3 font-display text-2xl font-semibold text-ink-primary">
           {title}
         </h2>
       </div>

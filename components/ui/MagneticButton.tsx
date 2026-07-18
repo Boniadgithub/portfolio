@@ -34,8 +34,8 @@ export default function MagneticButton({
   const styles = cn(
     "relative inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium transition-colors",
     variant === "primary"
-      ? "bg-white text-base hover:bg-white/90"
-      : "border border-line text-white hover:border-accent",
+      ? "bg-white text-base hover:bg-ink-primary/"
+      : "border border-line text-ink-primary hover:border-accent",
     className
   );
 

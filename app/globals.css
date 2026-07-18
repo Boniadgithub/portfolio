@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --color-base: #fff8dc;
+    --color-base-soft: #fdf6d8;
+    --color-base-raised: #ffffff;
+    --color-accent: #3b82f6;
+    --color-accent-violet: #8b5cf6;
+    --color-success: #22c55e;
+    --color-ink-primary: #0b0b0f;
+    --color-ink-secondary: #4b5563;
+    --color-ink-faint: #9ca3af;
+    --color-line: rgba(0, 0, 0, 0.08);
+  }
+
+  .dark {
+    --color-base: #0b0b0f;
+    --color-base-soft: #111827;
+    --color-base-raised: #15151c;
+    --color-accent: #3b82f6;
+    --color-accent-violet: #8b5cf6;
+    --color-success: #22c55e;
+    --color-ink-primary: #ffffff;
+    --color-ink-secondary: #a1a1aa;
+    --color-ink-faint: #6b7280;
+    --color-line: rgba(255, 255, 255, 0.08);
+  }
+}
+
 :root {
   --font-display: "Space Grotesk", sans-serif;
   --font-sans: "Inter", sans-serif;
@@ -23,8 +51,8 @@
 
 html,
 body {
-  background: #0b0b0f;
-  color: #ffffff;
+  background: var(--color-base);
+  color: var(--color-ink-primary);
   overscroll-behavior: none;
 }
 
@@ -41,12 +69,12 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0b0b0f;
+  background: var(--color-base);
 }
 ::-webkit-scrollbar-thumb {
-  background: #26262f;
+  background: var(--color-base-soft);
   border-radius: 999px;
-  border: 2px solid #0b0b0f;
+  border: 2px solid var(--color-base);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #3b82f6;
@@ -59,14 +87,14 @@ body {
 }
 
 .glass {
-  background: rgba(17, 24, 39, 0.5);
+  background: var(--color-base-soft);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--color-line);
 }
 
 .text-gradient {
-  background: linear-gradient(120deg, #ffffff 0%, #a1a1aa 100%);
+  background: linear-gradient(120deg, var(--color-ink-primary) 0%, var(--color-ink-secondary) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -86,8 +114,11 @@ body {
   pointer-events: none;
   z-index: 60;
   opacity: 0.035;
-  mix-blend-mode: overlay;
+  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.dark .grain::after {
+  mix-blend-mode: overlay;
 }
 
 .container-px {

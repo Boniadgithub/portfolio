@@ -47,7 +47,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           <Link
             href="/#work"
             data-cursor-hover
-            className="inline-flex items-center gap-2 text-sm text-ink-secondary transition-colors hover:text-white"
+            className="inline-flex items-center gap-2 text-sm text-ink-secondary transition-colors hover:text-ink-primary"
           >
             <ArrowLeft size={16} /> Back to work
           </Link>
@@ -58,7 +58,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           >
             {project.category} · {project.year}
           </p>
-          <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
+          <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-ink-primary sm:text-5xl md:text-6xl">
             {project.title}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-secondary">
@@ -88,7 +88,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 backgroundSize: "48px 48px",
               }}
             />
-            <span className="absolute bottom-6 right-8 font-display text-7xl font-semibold text-white/10">
+            <span className="absolute bottom-6 right-8 font-display text-7xl font-semibold text-ink-primary/10">
               {project.title}
             </span>
           </div>
@@ -185,7 +185,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <div className="container-px mx-auto max-w-5xl border-t border-line py-20">
         <p className="eyebrow">Next project</p>
         <div className="mt-4 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
-          <h3 className="font-display text-3xl font-semibold text-white sm:text-4xl">
+          <h3 className="font-display text-3xl font-semibold text-ink-primary sm:text-4xl">
             {next.title}
           </h3>
           <MagneticButton href={`/projects/${next.slug}`}>
@@ -201,7 +201,7 @@ function Meta({ label, value }: { label: string; value: string }) {
   return (
     <div>
       <p className="text-xs uppercase tracking-wider text-ink-faint">{label}</p>
-      <p className="mt-1 text-sm text-white">{value}</p>
+      <p className="mt-1 text-sm text-ink-primary">{value}</p>
     </div>
   );
 }

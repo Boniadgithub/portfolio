@@ -29,7 +29,7 @@ export default function Process() {
                 <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-accent/40 bg-base font-mono text-xs text-accent">
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <h3 className="mt-4 font-display text-base font-semibold text-white">
+                <h3 className="mt-4 font-display text-base font-semibold text-ink-primary">
                   {step.label}
                 </h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-ink-secondary">

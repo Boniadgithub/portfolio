@@ -11,21 +11,21 @@ const config: Config = {
     extend: {
       colors: {
         base: {
-          DEFAULT: "#0B0B0F",
-          soft: "#111827",
-          raised: "#15151C",
+          DEFAULT: "var(--color-base)",
+          soft: "var(--color-base-soft)",
+          raised: "var(--color-base-raised)",
         },
         accent: {
-          DEFAULT: "#3B82F6",
-          violet: "#8B5CF6",
+          DEFAULT: "var(--color-accent)",
+          violet: "var(--color-accent-violet)",
         },
-        success: "#22C55E",
+        success: "var(--color-success)",
         ink: {
-          primary: "#FFFFFF",
-          secondary: "#A1A1AA",
-          faint: "#6B7280",
+          primary: "var(--color-ink-primary)",
+          secondary: "var(--color-ink-secondary)",
+          faint: "var(--color-ink-faint)",
         },
-        line: "rgba(255,255,255,0.08)",
+        line: "var(--color-line)",
       },
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],
@@ -33,8 +33,6 @@ const config: Config = {
         mono: ["var(--font-mono)", "monospace"],
       },
       backgroundImage: {
-        "grid-glow":
-          "radial-gradient(circle at 20% 20%, rgba(59,130,246,0.18), transparent 40%), radial-gradient(circle at 80% 30%, rgba(139,92,246,0.16), transparent 45%), radial-gradient(circle at 50% 90%, rgba(34,197,94,0.08), transparent 40%)",
         "noise": "url('/images/noise.png')",
       },
       boxShadow: {

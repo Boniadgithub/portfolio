@@ -27,7 +27,7 @@ export default function Testimonials() {
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div className="mt-6 border-t border-line pt-4">
-                  <p className="text-sm font-medium text-white">{t.name}</p>
+                  <p className="text-sm font-medium text-ink-primary">{t.name}</p>
                   <p className="text-xs text-ink-faint">{t.role}</p>
                 </div>
               </GlassCard>
@@ -51,7 +51,7 @@ export default function Testimonials() {
                   <Award size={18} />
                 </div>
                 <div>
-                  <p className="font-medium text-white">{award.title}</p>
+                  <p className="font-medium text-ink-primary">{award.title}</p>
                   <p className="mt-1 text-xs text-ink-faint">
                     {award.org} · {award.year}
                   </p>

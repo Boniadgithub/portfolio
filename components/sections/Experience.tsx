@@ -26,7 +26,7 @@ export default function Experience() {
                 <p className="font-mono text-xs uppercase tracking-wider text-accent">
                   {item.period}
                 </p>
-                <h3 className="mt-2 font-display text-xl font-semibold text-white">
+                <h3 className="mt-2 font-display text-xl font-semibold text-ink-primary">
                   {item.title}
                 </h3>
                 <p className="text-sm text-ink-secondary">{item.org}</p>

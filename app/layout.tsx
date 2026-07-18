@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import CustomCursor from "@/components/layout/CustomCursor";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import { Toaster } from "sonner";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -68,23 +69,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} grain bg-base font-sans antialiased selection:bg-accent selection:text-white`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} grain bg-base font-sans antialiased selection:bg-accent selection:text-ink-primary`}
       >
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-accent focus:text-white focus:px-4 focus:py-2 focus:rounded-full"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-accent focus:text-ink-primary focus:px-4 focus:py-2 focus:rounded-full"
         >
           Skip to content
         </a>
-        <SmoothScroll>
-          <CustomCursor />
-          <Navbar />
-          <main id="main">{children}</main>
-          <Footer />
-        </SmoothScroll>
-        <Toaster position="bottom-right" theme="dark" />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SmoothScroll>
+            <CustomCursor />
+            <Navbar />
+            <main id="main">{children}</main>
+            <Footer />
+          </SmoothScroll>
+          <Toaster position="bottom-right" />
+        </ThemeProvider>
       </body>
     </html>
   );

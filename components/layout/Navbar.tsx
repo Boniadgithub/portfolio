@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { href: "/#about", label: "About" },
@@ -40,7 +41,7 @@ export default function Navbar() {
           <Link
             href="/"
             data-cursor-hover
-            className="font-display text-sm font-semibold tracking-tight text-white"
+            className="font-display text-sm font-semibold tracking-tight text-ink-primary"
           >
             Bonsa<span className="text-accent">.</span>
           </Link>
@@ -51,28 +52,34 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 data-cursor-hover
-                className="text-sm text-ink-secondary transition-colors hover:text-white"
+                className="text-sm text-ink-secondary transition-colors hover:text-ink-primary"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          <a
-            href="/#contact"
-            data-cursor-hover
-            className="hidden rounded-full bg-white px-5 py-2 text-sm font-medium text-base transition-transform hover:scale-105 md:inline-block"
-          >
-            Hire Me
-          </a>
+          <div className="hidden items-center gap-4 md:flex">
+            <ThemeToggle />
+            <a
+              href="/#contact"
+              data-cursor-hover
+              className="rounded-full bg-ink-primary px-5 py-2 text-sm font-medium text-base transition-transform hover:scale-105"
+            >
+              Hire Me
+            </a>
+          </div>
 
-          <button
-            aria-label="Toggle menu"
-            onClick={() => setOpen((v) => !v)}
-            className="text-white md:hidden"
-          >
-            {open ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
+            <button
+              aria-label="Toggle menu"
+              onClick={() => setOpen((v) => !v)}
+              className="text-ink-primary"
+            >
+              {open ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -91,7 +98,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-lg px-3 py-3 text-sm text-ink-secondary hover:bg-white/5 hover:text-white"
+                  className="rounded-lg px-3 py-3 text-sm text-ink-secondary hover:bg-ink-primary/5 hover:text-ink-primary"
                 >
                   {link.label}
                 </a>
@@ -99,7 +106,7 @@ export default function Navbar() {
               <a
                 href="/#contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 rounded-lg bg-white px-3 py-3 text-center text-sm font-medium text-base"
+                className="mt-2 rounded-lg bg-ink-primary px-3 py-3 text-center text-sm font-medium text-base"
               >
                 Hire Me
               </a>

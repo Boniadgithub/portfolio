@@ -91,17 +91,17 @@ export default function Contact() {
             className="flex flex-col space-y-8"
           >
             <div>
-              <h3 className="font-display text-2xl font-semibold text-white">
+              <h3 className="font-display text-2xl font-semibold text-ink-primary">
                 Bonsa Adugna
               </h3>
               <div className="mt-2 flex flex-wrap gap-2 text-sm text-ink-secondary">
-                <span className="rounded-full border border-line bg-white/5 px-3 py-1">
+                <span className="rounded-full border border-line bg-ink-primary/ px-3 py-1">
                   UI/UX Designer
                 </span>
-                <span className="rounded-full border border-line bg-white/5 px-3 py-1">
+                <span className="rounded-full border border-line bg-ink-primary/ px-3 py-1">
                   Full-Stack Developer
                 </span>
-                <span className="rounded-full border border-line bg-white/5 px-3 py-1">
+                <span className="rounded-full border border-line bg-ink-primary/ px-3 py-1">
                   AI Engineer
                 </span>
               </div>
@@ -119,21 +119,21 @@ export default function Contact() {
                 className="group flex items-center justify-between rounded-2xl border border-line p-5 transition-colors hover:border-accent"
               >
                 <span className="flex items-center gap-4">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-white transition-colors group-hover:bg-accent/10 group-hover:text-accent">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ink-primary/ text-ink-primary transition-colors group-hover:bg-accent/10 group-hover:text-accent">
                     <Mail size={20} />
                   </span>
                   <span>
                     <span className="block text-xs uppercase tracking-wider text-ink-faint">
                       Email
                     </span>
-                    <span className="block text-sm font-medium text-white">
+                    <span className="block text-sm font-medium text-ink-primary">
                       {contactInfo.email}
                     </span>
                   </span>
                 </span>
                 <button
                   onClick={copyEmail}
-                  className="rounded-full p-2 text-ink-faint transition-colors hover:bg-white/5 hover:text-white"
+                  className="rounded-full p-2 text-ink-faint transition-colors hover:bg-ink-primary/ hover:text-ink-primary"
                   title="Copy Email"
                 >
                   {isCopied ? <CheckCircle2 size={18} className="text-success" /> : <Copy size={18} />}
@@ -161,7 +161,7 @@ export default function Contact() {
                 href={contactInfo.resumeUrl}
                 download
                 data-cursor-hover
-                className="group flex items-center justify-center gap-2 rounded-xl border border-line bg-white/5 p-4 text-sm font-medium text-white transition-colors hover:border-accent hover:bg-accent/5"
+                className="group flex items-center justify-center gap-2 rounded-xl border border-line bg-ink-primary/ p-4 text-sm font-medium text-ink-primary transition-colors hover:border-accent hover:bg-accent/5"
               >
                 <Download size={18} className="text-ink-faint group-hover:text-accent" />
                 Download Resume
@@ -171,7 +171,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-cursor-hover
-                className="group flex items-center justify-center gap-2 rounded-xl border border-line bg-white/5 p-4 text-sm font-medium text-white transition-colors hover:border-accent hover:bg-accent/5"
+                className="group flex items-center justify-center gap-2 rounded-xl border border-line bg-ink-primary/ p-4 text-sm font-medium text-ink-primary transition-colors hover:border-accent hover:bg-accent/5"
               >
                 <Eye size={18} className="text-ink-faint group-hover:text-accent" />
                 View Resume
@@ -205,7 +205,7 @@ export default function Contact() {
                     type="text"
                     {...register("name")}
                     placeholder="Jane Doe"
-                    className={`w-full rounded-xl border bg-white/5 px-4 py-3 text-sm text-white placeholder:text-ink-faint focus:outline-none ${
+                    className={`w-full rounded-xl border bg-ink-primary/ px-4 py-3 text-sm text-ink-primary placeholder:text-ink-faint focus:outline-none ${
                       errors.name ? "border-red-500 focus:border-red-500" : "border-line focus:border-accent"
                     }`}
                   />
@@ -221,7 +221,7 @@ export default function Contact() {
                     type="email"
                     {...register("email")}
                     placeholder="jane@example.com"
-                    className={`w-full rounded-xl border bg-white/5 px-4 py-3 text-sm text-white placeholder:text-ink-faint focus:outline-none ${
+                    className={`w-full rounded-xl border bg-ink-primary/ px-4 py-3 text-sm text-ink-primary placeholder:text-ink-faint focus:outline-none ${
                       errors.email ? "border-red-500 focus:border-red-500" : "border-line focus:border-accent"
                     }`}
                   />
@@ -238,7 +238,7 @@ export default function Contact() {
                   type="text"
                   {...register("subject")}
                   placeholder="Project Inquiry"
-                  className={`w-full rounded-xl border bg-white/5 px-4 py-3 text-sm text-white placeholder:text-ink-faint focus:outline-none ${
+                  className={`w-full rounded-xl border bg-ink-primary/ px-4 py-3 text-sm text-ink-primary placeholder:text-ink-faint focus:outline-none ${
                     errors.subject ? "border-red-500 focus:border-red-500" : "border-line focus:border-accent"
                   }`}
                 />
@@ -254,7 +254,7 @@ export default function Contact() {
                   rows={5}
                   {...register("message")}
                   placeholder="Tell me about your project, timeline, and expectations..."
-                  className={`w-full resize-none rounded-xl border bg-white/5 px-4 py-3 text-sm text-white placeholder:text-ink-faint focus:outline-none ${
+                  className={`w-full resize-none rounded-xl border bg-ink-primary/ px-4 py-3 text-sm text-ink-primary placeholder:text-ink-faint focus:outline-none ${
                     errors.message ? "border-red-500 focus:border-red-500" : "border-line focus:border-accent"
                   }`}
                 />
@@ -303,14 +303,14 @@ function ContactLink({
       className="group flex items-center justify-between rounded-2xl border border-line p-5 transition-colors hover:border-accent"
     >
       <span className="flex items-center gap-4">
-        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-white transition-colors group-hover:bg-accent/10 group-hover:text-accent">
+        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ink-primary/ text-ink-primary transition-colors group-hover:bg-accent/10 group-hover:text-accent">
           {icon}
         </span>
         <span>
           <span className="block text-xs uppercase tracking-wider text-ink-faint">
             {label}
           </span>
-          <span className="block text-sm font-medium text-white">
+          <span className="block text-sm font-medium text-ink-primary">
             {value}
           </span>
         </span>

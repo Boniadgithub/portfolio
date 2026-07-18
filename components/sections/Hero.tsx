@@ -39,7 +39,7 @@ export default function Hero() {
               </span>
             </motion.div>
 
-            <h1 className="font-display text-5xl font-semibold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="font-display text-5xl font-semibold leading-[1.05] tracking-tight text-ink-primary sm:text-6xl lg:text-7xl">
               <Line delay={0}>Bonsa Adugna</Line>
               <Line delay={0.1}>
                 designs & builds{" "}
@@ -176,7 +176,7 @@ function FloatingCard({
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, delay: 0.8 }}
-      className={`glass absolute animate-float rounded-xl px-4 py-2.5 text-xs font-medium text-white ${className}`}
+      className={`glass absolute animate-float rounded-xl px-4 py-2.5 text-xs font-medium text-ink-primary ${className}`}
       style={{ animationDelay: `${delay}s` }}
     >
       {children}

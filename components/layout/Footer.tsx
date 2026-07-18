@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container-px mx-auto max-w-7xl py-14">
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="font-display text-2xl font-semibold text-white">
+            <p className="font-display text-2xl font-semibold text-ink-primary">
               Let&apos;s build something people remember.
             </p>
             <a
@@ -28,7 +28,7 @@ export default function Footer() {
               rel="noreferrer"
               data-cursor-hover
               aria-label="GitHub"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink-secondary transition-colors hover:border-accent hover:text-white"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink-secondary transition-colors hover:border-accent hover:text-ink-primary"
             >
               <Github size={18} />
             </a>
@@ -38,7 +38,7 @@ export default function Footer() {
               rel="noreferrer"
               data-cursor-hover
               aria-label="LinkedIn"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink-secondary transition-colors hover:border-accent hover:text-white"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink-secondary transition-colors hover:border-accent hover:text-ink-primary"
             >
               <Linkedin size={18} />
             </a>
@@ -46,7 +46,7 @@ export default function Footer() {
               href={`mailto:${contactInfo.email}`}
               data-cursor-hover
               aria-label="Email"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink-secondary transition-colors hover:border-accent hover:text-white"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink-secondary transition-colors hover:border-accent hover:text-ink-primary"
             >
               <Mail size={18} />
             </a>
