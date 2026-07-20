@@ -236,7 +236,7 @@ export default function Contact() {
 
                   <a
                     href={contactInfo.resumeUrl}
-                    download="Bonsa_Adugna_Resume.pdf"
+                    download="Bonsa_Adugna_Resume_ML.pdf"
                     data-cursor-hover
                     className="group/btn flex items-center justify-center gap-2 rounded-xl border border-accent/30
                                bg-accent/5 px-4 py-3 text-sm font-medium text-ink-primary
