@@ -495,5 +495,5 @@ export const contactInfo = {
   email: "hello@bonsaadugna.dev",
   linkedin: "https://linkedin.com/in/bonsa-adugna",
   github: "https://github.com/bonsa-adugna",
-  resumeUrl: "/resume/Bonsa-Adugna-Resume.pdf",
+  resumeUrl: "/resume/Bonsa_Adugna_Resume.pdf",
 };

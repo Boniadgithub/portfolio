@@ -156,27 +156,110 @@ export default function Contact() {
               />
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <a
-                href={contactInfo.resumeUrl}
-                download
-                data-cursor-hover
-                className="group flex items-center justify-center gap-2 rounded-xl border border-line bg-ink-primary/5 p-4 text-sm font-medium text-ink-primary transition-colors hover:border-accent hover:bg-accent/5"
-              >
-                <Download size={18} className="text-ink-faint group-hover:text-accent" />
-                Download Resume
-              </a>
-              <a
-                href={contactInfo.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-cursor-hover
-                className="group flex items-center justify-center gap-2 rounded-xl border border-line bg-ink-primary/5 p-4 text-sm font-medium text-ink-primary transition-colors hover:border-accent hover:bg-accent/5"
-              >
-                <Eye size={18} className="text-ink-faint group-hover:text-accent" />
-                View Resume
-              </a>
-            </div>
+            {/* ── Premium Resume Card ── */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="group/resume relative overflow-hidden rounded-2xl border border-line bg-base-soft/60 backdrop-blur-md"
+            >
+              {/* Decorative accent blob */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-[0.08] blur-2xl transition-opacity duration-700 group-hover/resume:opacity-[0.14]"
+                style={{ background: "radial-gradient(circle, #3b82f6, #8b5cf6)" }}
+              />
+
+              <div className="relative p-5">
+                {/* Header row */}
+                <div className="flex items-start gap-4">
+                  {/* Animated PDF icon */}
+                  <motion.div
+                    className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-accent/20 bg-accent/5"
+                    whileHover={{ scale: 1.08, rotate: -3 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                  >
+                    <svg
+                      viewBox="0 0 40 40"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-7 w-7"
+                      aria-hidden="true"
+                    >
+                      <rect x="8" y="4" width="24" height="32" rx="3" stroke="currentColor" strokeWidth="1.6" className="text-accent" fill="none" />
+                      <path d="M14 4V12H8" stroke="currentColor" strokeWidth="1.6" className="text-accent" strokeLinecap="round" strokeLinejoin="round" />
+                      <rect x="13" y="18" width="14" height="2" rx="1" className="fill-accent/40" />
+                      <rect x="13" y="23" width="10" height="2" rx="1" className="fill-accent/30" />
+                      <rect x="13" y="28" width="12" height="2" rx="1" className="fill-accent/20" />
+                    </svg>
+                  </motion.div>
+
+                  <div className="min-w-0 flex-1">
+                    <h4 className="font-display text-base font-semibold text-ink-primary">
+                      Resume
+                    </h4>
+                    <p className="mt-0.5 text-xs leading-relaxed text-ink-secondary">
+                      Preview in-browser or download a copy for your records.
+                    </p>
+                    <p className="mt-1.5 flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-ink-faint">
+                      <span className="inline-block h-1.5 w-1.5 rounded-full bg-success" />
+                      Updated July 2026
+                    </p>
+                  </div>
+                </div>
+
+                {/* Action buttons */}
+                <div className="mt-5 grid grid-cols-2 gap-3">
+                  <a
+                    href={contactInfo.resumeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-cursor-hover
+                    className="group/btn flex items-center justify-center gap-2 rounded-xl border border-line
+                               bg-ink-primary/[0.03] px-4 py-3 text-sm font-medium text-ink-primary
+                               transition-all duration-300
+                               hover:border-accent/50 hover:bg-accent/5 hover:shadow-[0_4px_20px_-6px_rgba(59,130,246,0.2)]
+                               focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
+                    aria-label="View resume in a new tab"
+                  >
+                    <Eye
+                      size={16}
+                      className="text-ink-faint transition-colors duration-300 group-hover/btn:text-accent"
+                    />
+                    <span>View</span>
+                    <ExternalLink
+                      size={12}
+                      className="ml-auto text-ink-faint/60 transition-transform duration-300 group-hover/btn:-translate-y-px group-hover/btn:translate-x-px group-hover/btn:text-accent/60"
+                    />
+                  </a>
+
+                  <a
+                    href={contactInfo.resumeUrl}
+                    download="Bonsa_Adugna_Resume.pdf"
+                    data-cursor-hover
+                    className="group/btn flex items-center justify-center gap-2 rounded-xl border border-accent/30
+                               bg-accent/5 px-4 py-3 text-sm font-medium text-ink-primary
+                               transition-all duration-300
+                               hover:border-accent hover:bg-accent/10 hover:shadow-[0_4px_20px_-6px_rgba(59,130,246,0.25)]
+                               focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
+                    aria-label="Download resume PDF"
+                  >
+                    <Download
+                      size={16}
+                      className="text-accent transition-transform duration-300 group-hover/btn:translate-y-0.5"
+                    />
+                    <span>Download</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Bottom gradient accent bar */}
+              <div
+                aria-hidden="true"
+                className="h-[2px] w-full bg-gradient-to-r from-transparent via-accent/30 to-transparent transition-opacity duration-500 group-hover/resume:via-accent/50"
+              />
+            </motion.div>
           </motion.div>
 
           {/* Right Side: Contact Form */}
