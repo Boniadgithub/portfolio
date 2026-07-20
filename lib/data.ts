@@ -1,7 +1,12 @@
+export type ProjectType = "design" | "development";
+
 export type Project = {
   slug: string;
   title: string;
+  /** Human-readable category label shown on the card */
   category: string;
+  /** Discriminator used by the filter tabs */
+  projectType: ProjectType;
   year: string;
   role: string;
   tagline: string;
@@ -27,6 +32,7 @@ export const projects: Project[] = [
     slug: "seox-saas-landing",
     title: "SEOX",
     category: "SaaS · Landing Page",
+    projectType: "design",
     year: "2026",
     role: "UI/UX Design, Landing Page Development",
     tagline: "An AI-powered SEO analytics platform, positioned as the calm command center for growth teams.",
@@ -75,6 +81,7 @@ export const projects: Project[] = [
     slug: "dashen-bank-redesign",
     title: "Dashen Bank",
     category: "Banking · Landing Page Redesign",
+    projectType: "design",
     year: "2025",
     role: "UI/UX Design, Mobile Mockups",
     tagline: "A full redesign of a fintech landing experience, rebuilt around trust, clarity, and modern banking conventions.",
@@ -122,6 +129,7 @@ export const projects: Project[] = [
     slug: "ai-medical-voice-assistant",
     title: "AI Medical Voice Assistant",
     category: "Healthcare · AI Product",
+    projectType: "development",
     year: "2025",
     role: "Product Design, AI Prompt Engineering",
     tagline: "A voice-first clinical assistant designed to reduce documentation load without adding cognitive burden.",
@@ -169,6 +177,7 @@ export const projects: Project[] = [
     slug: "knect-collaboration-platform",
     title: "Knect",
     category: "EdTech · Web Platform",
+    projectType: "development",
     year: "2025",
     role: "UI/UX Design, Full-Stack Development",
     tagline: "A cross-university collaboration platform helping students from different institutions find and build projects together.",
@@ -216,6 +225,7 @@ export const projects: Project[] = [
     slug: "dental-clinic-website",
     title: "Dental Clinic",
     category: "Healthcare · Website",
+    projectType: "design",
     year: "2025",
     role: "UI/UX Design, Web Development",
     tagline: "A calm, appointment-first website designed to lower the anxiety that usually precedes booking a dental visit.",
@@ -261,6 +271,7 @@ export const projects: Project[] = [
     slug: "career-pilot-ai",
     title: "Career Pilot",
     category: "AI Platform · Career Guidance",
+    projectType: "development",
     year: "2025",
     role: "Product Design, AI Integration",
     tagline: "An AI career guidance platform that turns a messy job search into a structured, personalized plan.",
@@ -307,6 +318,7 @@ export const projects: Project[] = [
     slug: "quizme-ai",
     title: "QuizMe AI",
     category: "AI Platform · Interactive Learning",
+    projectType: "development",
     year: "2024",
     role: "UI/UX Design, Full-Stack Development",
     tagline: "An AI-powered quiz platform that turns any topic or document into an interactive, scored learning session.",
