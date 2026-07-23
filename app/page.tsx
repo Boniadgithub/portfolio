@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/Hero";
+import FeaturedProject from "@/components/sections/FeaturedProject";
 import TechCarousel from "@/components/sections/TechCarousel";
 import About from "@/components/sections/About";
 import Projects from "@/components/sections/Projects";
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <FeaturedProject />
       <TechCarousel />
       <About />
       <Projects />
