@@ -2,6 +2,7 @@ import Hero from "@/components/sections/Hero";
 import FeaturedProject from "@/components/sections/FeaturedProject";
 import TechCarousel from "@/components/sections/TechCarousel";
 import About from "@/components/sections/About";
+import Stats from "@/components/sections/Stats";
 import Projects from "@/components/sections/Projects";
 import Process from "@/components/sections/Process";
 import Skills from "@/components/sections/Skills";
@@ -17,6 +18,7 @@ export default function Home() {
       <FeaturedProject />
       <TechCarousel />
       <About />
+      <Stats />
       <Projects />
       <Process />
       <Skills />
