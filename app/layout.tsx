@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import CustomCursor from "@/components/layout/CustomCursor";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import CommandPalette from "@/components/ui/CommandPalette";
+import ScrollProgress from "@/components/ui/ScrollProgress";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -88,6 +89,7 @@ export default function RootLayout({
         >
           <SmoothScroll>
             <CustomCursor />
+            <ScrollProgress />
             <CommandPalette />
             <Navbar />
             <main id="main">{children}</main>

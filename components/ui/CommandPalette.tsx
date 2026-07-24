@@ -111,6 +111,7 @@ export default function CommandPalette() {
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Type a command or search..."
+                  aria-label="Search command palette"
                   className="w-full bg-transparent py-5 text-lg text-ink placeholder:text-ink-faint focus:outline-none"
                 />
                 <div className="flex items-center gap-1 text-[10px] font-mono text-ink-faint bg-base-soft px-2 py-1 rounded">

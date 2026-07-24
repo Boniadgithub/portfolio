@@ -18,12 +18,36 @@ const links = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(`/#${entry.target.id}`);
+          }
+        });
+      },
+      { rootMargin: "-20% 0px -70% 0px" }
+    );
+
+    // Wait for Next.js to render sections
+    setTimeout(() => {
+      const sections = document.querySelectorAll("section[id]");
+      sections.forEach((s) => observer.observe(s));
+    }, 500);
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -46,17 +70,28 @@ export default function Navbar() {
             Bonsa<span className="text-accent">.</span>
           </Link>
 
-          <nav className="hidden items-center gap-8 md:flex">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                data-cursor-hover
-                className="text-sm text-ink-secondary transition-colors hover:text-ink-primary"
-              >
-                {link.label}
-              </a>
-            ))}
+          <nav className="hidden items-center gap-8 md:flex relative">
+            {links.map((link) => {
+              const isActive = activeSection === link.href;
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  data-cursor-hover
+                  className={`text-sm transition-colors relative ${isActive ? "text-accent font-medium" : "text-ink-secondary hover:text-ink-primary"}`}
+                >
+                  {link.label}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeNavIndicator"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-accent"
+                      initial={false}
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                </a>
+              );
+            })}
           </nav>
 
           <div className="hidden items-center gap-4 md:flex">
