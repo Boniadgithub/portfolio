@@ -7,7 +7,6 @@ import MagneticButton from "@/components/ui/MagneticButton";
 import CaseStudySection from "@/components/sections/CaseStudySection";
 import Image from "next/image";
 
-
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
@@ -76,7 +75,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         />
         <div className="container-px relative mx-auto max-w-5xl">
           <Link
-            href="/#work"
+            href="/work"
             data-cursor-hover
             className="inline-flex items-center gap-2 text-sm text-ink-secondary transition-colors hover:text-ink-primary"
           >
@@ -355,11 +354,11 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <p className="eyebrow mb-2">Next project</p>
         <div className="mt-4 flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
           <h3 className="font-display text-4xl font-bold text-ink-primary sm:text-5xl hover:opacity-80 transition-opacity">
-            <Link href={`/projects/${next.slug}`}>
+            <Link href={`/work/${next.slug}`}>
               {next.title}
             </Link>
           </h3>
-          <MagneticButton href={`/projects/${next.slug}`}>
+          <MagneticButton href={`/work/${next.slug}`}>
             View case study <ArrowUpRight size={18} />
           </MagneticButton>
         </div>

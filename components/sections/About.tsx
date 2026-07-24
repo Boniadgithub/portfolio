@@ -1,3 +1,7 @@
+"use client";
+
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlassCard from "@/components/ui/GlassCard";
 import RevealText from "@/components/ui/RevealText";
@@ -17,16 +21,16 @@ const pillars = [
   },
 ];
 
-export default function About() {
+export default function About({ condensed = false }: { condensed?: boolean }) {
   return (
-    <section id="about" className="section-py relative">
+    <section id="about" className="section-py relative bg-base">
       <div className="container-px mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="About"
-          title="I connect design thinking with engineering execution."
+          title={condensed ? "Connecting design thinking with engineering execution." : "I connect design thinking with engineering execution."}
         />
 
-        <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_1fr]">
+        <div className={`mt-16 grid gap-12 ${condensed ? "lg:grid-cols-1 max-w-3xl" : "lg:grid-cols-[1fr_1fr]"}`}>
           <div className="space-y-6">
             <RevealText as="p" className="text-lg leading-relaxed text-ink-secondary">
               I&apos;m a Computer Science &amp; Engineering graduate who builds
@@ -42,29 +46,44 @@ export default function About() {
               understanding exactly how it will be built — and I rarely ship
               code without having thought through how it should feel to use.
             </RevealText>
-            <RevealText as="p" delay={0.2} className="text-lg leading-relaxed text-ink-secondary">
-              Outside of client work, I contribute to AI evaluation and
-              dataset design across engineering domains, and I mentor students
-              through competitive programming and career readiness — work
-              that keeps my own problem-solving sharp.
-            </RevealText>
+            {!condensed && (
+              <RevealText as="p" delay={0.2} className="text-lg leading-relaxed text-ink-secondary">
+                Outside of client work, I contribute to AI evaluation and
+                dataset design across engineering domains, and I mentor students
+                through competitive programming and career readiness — work
+                that keeps my own problem-solving sharp.
+              </RevealText>
+            )}
+
+            {condensed && (
+              <div className="pt-4">
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-2 rounded-full bg-ink-primary px-6 py-3 text-sm font-medium text-base transition-transform hover:scale-105"
+                >
+                  Read My Story <ArrowRight size={16} />
+                </Link>
+              </div>
+            )}
           </div>
 
-          <div className="grid gap-5">
-            {pillars.map((p, i) => (
-              <GlassCard key={p.title} className="border-line">
-                <span className="font-mono text-xs text-accent">
-                  0{i + 1}
-                </span>
-                <h3 className="mt-3 font-display text-xl font-semibold text-ink-primary">
-                  {p.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-secondary">
-                  {p.body}
-                </p>
-              </GlassCard>
-            ))}
-          </div>
+          {!condensed && (
+            <div className="grid gap-5">
+              {pillars.map((p, i) => (
+                <GlassCard key={p.title} className="border-line">
+                  <span className="font-mono text-xs text-accent">
+                    0{i + 1}
+                  </span>
+                  <h3 className="mt-3 font-display text-xl font-semibold text-ink-primary">
+                    {p.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-secondary">
+                    {p.body}
+                  </p>
+                </GlassCard>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

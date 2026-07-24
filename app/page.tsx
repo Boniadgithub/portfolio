@@ -2,29 +2,52 @@ import Hero from "@/components/sections/Hero";
 import FeaturedProject from "@/components/sections/FeaturedProject";
 import TechCarousel from "@/components/sections/TechCarousel";
 import About from "@/components/sections/About";
-import Stats from "@/components/sections/Stats";
-import Projects from "@/components/sections/Projects";
-import Process from "@/components/sections/Process";
-import Skills from "@/components/sections/Skills";
-import Experience from "@/components/sections/Experience";
-import Testimonials from "@/components/sections/Testimonials";
-import Contact from "@/components/sections/Contact";
-
+import ProjectCard from "@/components/sections/ProjectCard";
+import CTA from "@/components/sections/CTA";
+import SectionHeading from "@/components/ui/SectionHeading";
+import MagneticButton from "@/components/ui/MagneticButton";
+import { ArrowRight } from "lucide-react";
+import { projects } from "@/lib/data";
 
 export default function Home() {
+  // Select first 3 projects for the home page index
+  const selectedProjects = projects.slice(0, 3);
+
   return (
     <>
       <Hero />
       <FeaturedProject />
       <TechCarousel />
-      <About />
-      <Stats />
-      <Projects />
-      <Process />
-      <Skills />
-      <Experience />
-      <Testimonials />
-      <Contact />
+      
+      {/* Short condensed About section */}
+      <About condensed={true} />
+
+      {/* Selected Projects Grid */}
+      <section className="section-py relative bg-base">
+        <div className="container-px mx-auto max-w-7xl">
+          <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+            <SectionHeading
+              eyebrow="Selected Work"
+              title="A few cases I've recently delivered"
+              description="A curated index of designs and development builds. Click on any card to view the case study."
+            />
+            <div className="shrink-0 md:pb-1">
+              <MagneticButton href="/work">
+                View All Work <ArrowRight size={18} />
+              </MagneticButton>
+            </div>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {selectedProjects.map((project, i) => (
+              <ProjectCard key={project.slug} project={project} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Brand CTA */}
+      <CTA />
     </>
   );
 }

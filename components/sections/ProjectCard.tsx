@@ -14,7 +14,7 @@ export default function ProjectCard({
 }) {
   return (
     <Link
-      href={`/projects/${project.slug}`}
+      href={`/work/${project.slug}`}
       data-cursor-hover
       className="card-hover group relative block overflow-hidden rounded-2xl border border-line bg-base-soft/40"
     >

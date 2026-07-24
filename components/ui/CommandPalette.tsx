@@ -14,11 +14,10 @@ type Command = {
 
 const commands: Command[] = [
   { id: "home", title: "Home", icon: <Home size={18} />, href: "/" },
-  { id: "about", title: "About", icon: <User size={18} />, href: "/#about" },
-  { id: "skills", title: "Skills", icon: <Code size={18} />, href: "/#skills" },
-  { id: "projects", title: "Projects", icon: <Briefcase size={18} />, href: "/#work" },
-  { id: "resume", title: "Resume", icon: <FileText size={18} />, href: "/resume/Bonsa_Adugna_Resume_ML.pdf" },
-  { id: "contact", title: "Contact", icon: <Mail size={18} />, href: "/#contact" },
+  { id: "about", title: "About", icon: <User size={18} />, href: "/about" },
+  { id: "work", title: "Work & Projects", icon: <Briefcase size={18} />, href: "/work" },
+  { id: "resume", title: "Resume", icon: <FileText size={18} />, href: "/resume" },
+  { id: "contact", title: "Contact", icon: <Mail size={18} />, href: "/contact" },
 ];
 
 export default function CommandPalette() {
@@ -121,7 +120,7 @@ export default function CommandPalette() {
               <div className="max-h-[50vh] overflow-y-auto p-2">
                 {filteredCommands.length === 0 ? (
                   <div className="py-14 text-center text-sm text-ink-secondary">
-                    No results found for "{search}"
+                    No results found for &quot;{search}&quot;
                   </div>
                 ) : (
                   <div className="flex flex-col gap-1">

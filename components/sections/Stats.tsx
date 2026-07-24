@@ -31,7 +31,7 @@ function AnimatedCounter({ value }: { value: number }) {
   useEffect(() => {
     return springValue.on("change", (latest) => {
       if (ref.current) {
-        ref.current.textContent = Intl.NumberFormat("en-US").format(latest.toFixed(0));
+        ref.current.textContent = Intl.NumberFormat("en-US").format(Math.round(latest));
       }
     });
   }, [springValue]);

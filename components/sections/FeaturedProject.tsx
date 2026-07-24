@@ -133,7 +133,7 @@ export default function FeaturedProject() {
                 className="flex flex-col sm:flex-row gap-4"
               >
                 <Link
-                  href={`/projects/${featured.slug}`}
+                  href={`/work/${featured.slug}`}
                   className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-medium text-base transition-transform hover:scale-[1.02] active:scale-[0.98]"
                 >
                   Read Case Study

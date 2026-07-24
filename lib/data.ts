@@ -25,6 +25,12 @@ export type Project = {
   development: string;
   results: { label: string; value: string }[];
   lessons: string;
+  objectives?: string[];
+  technicalArchitecture?: string;
+  technicalChallenges?: string[];
+  solutions?: string[];
+  screenshots?: string[];
+  futureImprovements?: string[];
 };
 
 export const projects: Project[] = [

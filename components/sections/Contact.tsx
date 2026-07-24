@@ -106,7 +106,7 @@ export default function Contact() {
                 </span>
               </div>
               <p className="mt-6 text-lg leading-relaxed text-ink-secondary">
-                Interested in working together or discussing an opportunity? I'd
+                Interested in working together or discussing an opportunity? I&apos;d
                 love to hear from you. Feel free to reach out through the form
                 or any of the platforms below.
               </p>
