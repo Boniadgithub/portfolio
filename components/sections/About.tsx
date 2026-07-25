@@ -21,7 +21,11 @@ const pillars = [
   },
 ];
 
-export default function About({ condensed = false }: { condensed?: boolean }) {
+interface AboutProps {
+  condensed?: boolean;
+}
+
+export default function About({ condensed = false }: AboutProps) {
   return (
     <section id="about" className="section-py relative bg-base">
       <div className="container-px mx-auto max-w-7xl">
