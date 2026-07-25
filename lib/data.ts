@@ -235,9 +235,10 @@ export const projects: Project[] = [
     year: "2025",
     role: "UI/UX Design, Web Development",
     tagline: "A calm, appointment-first website designed to lower the anxiety that usually precedes booking a dental visit.",
-    cover: "/images/projects/dental-cover.jpg",
+    cover: "/images/projects/dental_desktop_mockup.png",
     color: "#22C55E",
     tech: ["Figma", "HTML/CSS", "JavaScript"],
+    screenshots: ["/images/projects/dental_desktop_mockup.png"],
     overview:
       "Most local clinic websites lead with the practice's history and staff bios. This project reordered priorities around what a new patient actually needs first: services, cost expectations, and a fast way to book.",
     challenge:

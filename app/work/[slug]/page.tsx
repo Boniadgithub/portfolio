@@ -107,9 +107,9 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </div>
         </div>
 
-        <div className="container-px mx-auto mt-20 max-w-6xl">
+        <div className="container-px mx-auto mt-20 max-w-7xl">
           <div
-            className="relative aspect-[21/9] w-full overflow-hidden rounded-3xl border border-line shadow-2xl"
+            className="relative aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-3xl border border-line shadow-2xl"
             style={{
               background: `radial-gradient(circle at 30% 20%, ${project.color}33, transparent 60%), #111827`,
             }}
@@ -286,36 +286,53 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       </div>
 
       {/* Full-width Image Gallery */}
-      {project.screenshots && project.screenshots.length > 0 && (
-        <div id="gallery" className="border-y border-line/50 bg-base-soft py-24 my-10 scroll-mt-32">
-          <div className="container-px mx-auto max-w-7xl">
-            <div className="mb-16 md:text-center">
-              <p className="eyebrow mb-4">Gallery</p>
-              <h2 className="font-display text-3xl font-semibold text-ink-primary md:text-4xl">
-                Project Screenshots
-              </h2>
-            </div>
-            
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {project.screenshots.map((src, i) => (
-                <div 
-                  key={i} 
-                  className={`relative overflow-hidden rounded-2xl border border-line bg-base group shadow-sm ${i === 0 ? 'sm:col-span-2 lg:col-span-2 aspect-[21/9]' : 'aspect-video'}`}
-                >
-                  <Image 
-                    src={src} 
-                    alt={`Screenshot ${i + 1}`} 
-                    fill 
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105" 
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
-              ))}
+      {project.screenshots && project.screenshots.length > 0 && (() => {
+        const screenshotCount = project.screenshots.length;
+        return (
+          <div id="gallery" className="border-y border-line/50 bg-base-soft py-24 my-10 scroll-mt-32">
+            <div className="container-px mx-auto max-w-7xl">
+              <div className="mb-16 md:text-center">
+                <p className="eyebrow mb-4">Gallery</p>
+                <h2 className="font-display text-3xl font-semibold text-ink-primary md:text-4xl">
+                  Project Screenshots
+                </h2>
+              </div>
+              
+              <div className={`grid gap-6 ${
+                screenshotCount === 1
+                  ? 'grid-cols-1'
+                  : screenshotCount === 2
+                  ? 'grid-cols-1 sm:grid-cols-2'
+                  : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
+              }`}>
+                {project.screenshots.map((src, i) => (
+                  <div 
+                    key={i} 
+                    className={`relative overflow-hidden rounded-2xl border border-line bg-base group shadow-sm ${
+                      screenshotCount === 1
+                        ? 'w-full aspect-[16/9]'
+                        : screenshotCount === 2
+                        ? 'w-full aspect-[16/10]'
+                        : i === 0
+                        ? 'sm:col-span-2 lg:col-span-2 aspect-[16/9]'
+                        : 'aspect-video'
+                    }`}
+                  >
+                    <Image 
+                      src={src} 
+                      alt={`Screenshot ${i + 1}`} 
+                      fill 
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105" 
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
 
       <div id="outcomes" className="container-px mx-auto max-w-5xl py-10 scroll-mt-32">
         <CaseStudySection eyebrow="Outcomes" title="Results & Impact">
