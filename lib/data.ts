@@ -35,6 +35,149 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "dental-clinic-website",
+    title: "Dental Clinic",
+    category: "Healthcare · Website",
+    projectType: "design",
+    year: "2025",
+    role: "UI/UX Design, Web Development",
+    tagline: "A calm, appointment-first website designed to lower the anxiety that usually precedes booking a dental visit.",
+    cover: "/images/projects/dental_desktop_mockup.png",
+    color: "#22C55E",
+    tech: ["Figma", "HTML/CSS", "JavaScript"],
+    screenshots: ["/images/projects/dental_desktop_mockup.png"],
+    overview:
+      "Most local clinic websites lead with the practice's history and staff bios. This project reordered priorities around what a new patient actually needs first: services, cost expectations, and a fast way to book.",
+    challenge:
+      "Dental visits carry real anxiety for many visitors. The design needed warmth without cliché (no stock smiling-patient photography) and clarity without feeling clinical or cold.",
+    research: [
+      "Reviewed patient reviews of comparable clinics to identify the specific anxieties driving booking hesitation (cost uncertainty, pain, wait times).",
+      "Mapped the shortest possible path from landing to confirmed appointment.",
+    ],
+    wireframes:
+      "Wireframed a services-first homepage with visible pricing ranges and a persistent booking CTA, replacing the typical hero-bio-services ordering.",
+    userFlow:
+      "Land on service relevant to need → see approximate cost and duration → view available time slots → book → receive confirmation with prep instructions.",
+    designProcess: [
+      "Used a soft, warm-neutral palette with a single confident accent to counter typical clinical coldness.",
+      "Replaced generic stock photography with clean iconography and real clinic interior photography.",
+      "Surfaced pricing ranges directly, addressing the top researched source of booking hesitation.",
+    ],
+    designSystem: [
+      "Service card components with price range, duration, and one-tap booking",
+      "Soft-rounded UI language distinct from the sharper, technical style of the portfolio's SaaS work",
+    ],
+    highFidelity:
+      "Final UI balanced warmth and legibility, tested for readability with older visitor demographics in mind.",
+    prototype:
+      "Prototyped the booking flow end-to-end and tested it with non-technical users unfamiliar with the clinic.",
+    development:
+      "Built as a fast, lightweight HTML/CSS/JS site optimized for mobile booking completion.",
+    results: [
+      { label: "Booking completion rate", value: "+31%" },
+      { label: "Mobile load time", value: "1.2s" },
+      { label: "Bounce rate", value: "-22%" },
+    ],
+    lessons:
+      "Removing ambiguity around cost did more to reduce booking anxiety than any amount of reassuring copy — the data itself was the reassurance.",
+  },
+  {
+    slug: "knect-collaboration-platform",
+    title: "Knect",
+    category: "EdTech · Web Platform",
+    projectType: "development",
+    year: "2025",
+    role: "UI/UX Design, Full-Stack Development",
+    tagline: "A cross-university collaboration platform helping students from different institutions find and build projects together.",
+    cover: "/images/projects/Knect.png",
+    color: "#3B82F6",
+    tech: ["Figma", "React", "Next.js", "FastAPI"],
+    overview:
+      "Students across universities were forming project teams informally through scattered group chats. Knect gives them a structured place to post project ideas, find collaborators by skill, and manage a project from idea to completion.",
+    challenge:
+      "The platform needed to feel lightweight enough for students to adopt casually, while still being structured enough to prevent the same chaos of the group chats it was replacing.",
+    research: [
+      "Surveyed students across multiple universities about how they currently formed project teams and where that process broke down.",
+      "Identified skill-matching and commitment-level mismatch as the two most common causes of stalled student projects.",
+      "Benchmarked against general-purpose collaboration tools to identify what to deliberately leave out.",
+    ],
+    wireframes:
+      "Wireframed a skill-tagged project feed, a lightweight applicant flow, and a per-project workspace, testing card density against scan speed for a student audience used to social feeds.",
+    userFlow:
+      "Discover projects by skill/interest → apply with a short pitch → project owner reviews and accepts → shared project workspace with tasks and updates → completion and portfolio credit.",
+    designProcess: [
+      "Prioritized a feed-based discovery model students would already understand from social apps, rather than a formal 'marketplace' layout.",
+      "Designed skill tags as the primary filtering and matching mechanism across the whole product.",
+      "Built a lightweight workspace (tasks, updates, members) rather than replicating full project-management complexity.",
+    ],
+    designSystem: [
+      "Skill-tag chip system reused across discovery, profiles, and matching",
+      "Card-based feed components with consistent metadata hierarchy",
+      "Status badges for project stage (Open, In Progress, Completed)",
+    ],
+    highFidelity:
+      "High-fidelity UI leaned into a bright, approachable style distinct from the rest of the portfolio's darker case studies, matched to a younger, campus-facing audience.",
+    prototype:
+      "Clickable prototype tested with students to validate the apply-and-accept flow before development began.",
+    development:
+      "Built full-stack with a React/Next.js frontend and a FastAPI backend handling project, application, and workspace data.",
+    results: [
+      { label: "Cross-university teams formed", value: "40+" },
+      { label: "Avg. time-to-first-application", value: "< 2 days" },
+      { label: "Student satisfaction", value: "4.6 / 5" },
+    ],
+    lessons:
+      "For a student audience, familiarity beat novelty. Reusing feed and chip patterns from apps they already knew made adoption far easier than introducing new interaction models.",
+  },
+  {
+    slug: "ai-medical-voice-assistant",
+    title: "AI Medical Voice Assistant",
+    category: "Healthcare · AI Product",
+    projectType: "development",
+    year: "2025",
+    role: "Product Design, AI Prompt Engineering",
+    tagline: "A voice-first clinical assistant designed to reduce documentation load without adding cognitive burden.",
+    cover: "/images/projects/AI medical.png",
+    color: "#8B5CF6",
+    tech: ["Figma", "Python", "Speech-to-text APIs", "Prompt Engineering"],
+    overview:
+      "Clinicians lose significant time to manual documentation. This product listens during a consultation and drafts structured clinical notes in real time, with the interface designed to stay invisible during the actual patient interaction.",
+    challenge:
+      "The interface had to support two conflicting needs: near-zero visual attention during a live consultation, and full editorial control immediately afterward. Most voice-assistant UIs optimize for one at the expense of the other.",
+    research: [
+      "Shadowed the structure of typical outpatient consultations to map where documentation naturally pauses.",
+      "Reviewed clinical note formats (SOAP) to ensure AI-generated structure matched what clinicians already expect.",
+      "Evaluated failure modes of transcription errors in medical contexts, since mistakes here carry real risk.",
+    ],
+    wireframes:
+      "Wireframes centered on a minimal, ambient status indicator during recording, and a distinctly separate structured-review screen afterward — deliberately avoiding a single 'do everything' interface.",
+    userFlow:
+      "Start visit → ambient listening (near-invisible UI) → automatic SOAP-structured draft → clinician review with confidence-flagged segments → one-tap export to EHR-compatible format.",
+    designProcess: [
+      "Designed a passive, low-attention recording state using a single breathing indicator rather than a live waveform, to avoid pulling clinical attention away from the patient.",
+      "Flagged low-confidence transcription segments visually so clinicians could review efficiently instead of re-reading the entire note.",
+      "Wrote and iterated the underlying prompts to keep generated notes clinically structured, concise, and free of invented detail.",
+    ],
+    designSystem: [
+      "Calm, low-saturation palette for in-consultation states",
+      "Confidence-flag color coding for AI-generated text",
+      "SOAP-note component templates (Subjective, Objective, Assessment, Plan)",
+    ],
+    highFidelity:
+      "High-fidelity screens balanced clinical seriousness with approachability — sufficient white space and type scale to remain legible in fast post-visit review.",
+    prototype:
+      "A prompt-driven prototype validated note structure and tone against real (de-identified) consultation transcripts before any visual design was finalized.",
+    development:
+      "Implemented as a Python-based pipeline connecting speech-to-text output to a structured note-generation prompt, paired with a review interface prototype.",
+    results: [
+      { label: "Draft note review time", value: "-46%" },
+      { label: "Clinician-reported trust", value: "High" },
+      { label: "Low-confidence flag accuracy", value: "89%" },
+    ],
+    lessons:
+      "In healthcare AI, the interface's job is often to be quiet. The best-performing version of this product was the one with the least visible UI during the moment that mattered most.",
+  },
+  {
     slug: "seox-saas-landing",
     title: "SEOX",
     category: "SaaS · Landing Page",
@@ -132,149 +275,6 @@ export const projects: Project[] = [
       "Precision reads as trust. In financial UI, alignment and consistency communicate more credibility than decoration — the engineering-drawing language became the project's throughline for exactly that reason.",
   },
   {
-    slug: "ai-medical-voice-assistant",
-    title: "AI Medical Voice Assistant",
-    category: "Healthcare · AI Product",
-    projectType: "development",
-    year: "2025",
-    role: "Product Design, AI Prompt Engineering",
-    tagline: "A voice-first clinical assistant designed to reduce documentation load without adding cognitive burden.",
-    cover: "/images/projects/AI medical.png",
-    color: "#8B5CF6",
-    tech: ["Figma", "Python", "Speech-to-text APIs", "Prompt Engineering"],
-    overview:
-      "Clinicians lose significant time to manual documentation. This product listens during a consultation and drafts structured clinical notes in real time, with the interface designed to stay invisible during the actual patient interaction.",
-    challenge:
-      "The interface had to support two conflicting needs: near-zero visual attention during a live consultation, and full editorial control immediately afterward. Most voice-assistant UIs optimize for one at the expense of the other.",
-    research: [
-      "Shadowed the structure of typical outpatient consultations to map where documentation naturally pauses.",
-      "Reviewed clinical note formats (SOAP) to ensure AI-generated structure matched what clinicians already expect.",
-      "Evaluated failure modes of transcription errors in medical contexts, since mistakes here carry real risk.",
-    ],
-    wireframes:
-      "Wireframes centered on a minimal, ambient status indicator during recording, and a distinctly separate structured-review screen afterward — deliberately avoiding a single 'do everything' interface.",
-    userFlow:
-      "Start visit → ambient listening (near-invisible UI) → automatic SOAP-structured draft → clinician review with confidence-flagged segments → one-tap export to EHR-compatible format.",
-    designProcess: [
-      "Designed a passive, low-attention recording state using a single breathing indicator rather than a live waveform, to avoid pulling clinical attention away from the patient.",
-      "Flagged low-confidence transcription segments visually so clinicians could review efficiently instead of re-reading the entire note.",
-      "Wrote and iterated the underlying prompts to keep generated notes clinically structured, concise, and free of invented detail.",
-    ],
-    designSystem: [
-      "Calm, low-saturation palette for in-consultation states",
-      "Confidence-flag color coding for AI-generated text",
-      "SOAP-note component templates (Subjective, Objective, Assessment, Plan)",
-    ],
-    highFidelity:
-      "High-fidelity screens balanced clinical seriousness with approachability — sufficient white space and type scale to remain legible in fast post-visit review.",
-    prototype:
-      "A prompt-driven prototype validated note structure and tone against real (de-identified) consultation transcripts before any visual design was finalized.",
-    development:
-      "Implemented as a Python-based pipeline connecting speech-to-text output to a structured note-generation prompt, paired with a review interface prototype.",
-    results: [
-      { label: "Draft note review time", value: "-46%" },
-      { label: "Clinician-reported trust", value: "High" },
-      { label: "Low-confidence flag accuracy", value: "89%" },
-    ],
-    lessons:
-      "In healthcare AI, the interface's job is often to be quiet. The best-performing version of this product was the one with the least visible UI during the moment that mattered most.",
-  },
-  {
-    slug: "knect-collaboration-platform",
-    title: "Knect",
-    category: "EdTech · Web Platform",
-    projectType: "development",
-    year: "2025",
-    role: "UI/UX Design, Full-Stack Development",
-    tagline: "A cross-university collaboration platform helping students from different institutions find and build projects together.",
-    cover: "/images/projects/Knect.png",
-    color: "#3B82F6",
-    tech: ["Figma", "React", "Next.js", "FastAPI"],
-    overview:
-      "Students across universities were forming project teams informally through scattered group chats. Knect gives them a structured place to post project ideas, find collaborators by skill, and manage a project from idea to completion.",
-    challenge:
-      "The platform needed to feel lightweight enough for students to adopt casually, while still being structured enough to prevent the same chaos of the group chats it was replacing.",
-    research: [
-      "Surveyed students across multiple universities about how they currently formed project teams and where that process broke down.",
-      "Identified skill-matching and commitment-level mismatch as the two most common causes of stalled student projects.",
-      "Benchmarked against general-purpose collaboration tools to identify what to deliberately leave out.",
-    ],
-    wireframes:
-      "Wireframed a skill-tagged project feed, a lightweight applicant flow, and a per-project workspace, testing card density against scan speed for a student audience used to social feeds.",
-    userFlow:
-      "Discover projects by skill/interest → apply with a short pitch → project owner reviews and accepts → shared project workspace with tasks and updates → completion and portfolio credit.",
-    designProcess: [
-      "Prioritized a feed-based discovery model students would already understand from social apps, rather than a formal 'marketplace' layout.",
-      "Designed skill tags as the primary filtering and matching mechanism across the whole product.",
-      "Built a lightweight workspace (tasks, updates, members) rather than replicating full project-management complexity.",
-    ],
-    designSystem: [
-      "Skill-tag chip system reused across discovery, profiles, and matching",
-      "Card-based feed components with consistent metadata hierarchy",
-      "Status badges for project stage (Open, In Progress, Completed)",
-    ],
-    highFidelity:
-      "High-fidelity UI leaned into a bright, approachable style distinct from the rest of the portfolio's darker case studies, matched to a younger, campus-facing audience.",
-    prototype:
-      "Clickable prototype tested with students to validate the apply-and-accept flow before development began.",
-    development:
-      "Built full-stack with a React/Next.js frontend and a FastAPI backend handling project, application, and workspace data.",
-    results: [
-      { label: "Cross-university teams formed", value: "40+" },
-      { label: "Avg. time-to-first-application", value: "< 2 days" },
-      { label: "Student satisfaction", value: "4.6 / 5" },
-    ],
-    lessons:
-      "For a student audience, familiarity beat novelty. Reusing feed and chip patterns from apps they already knew made adoption far easier than introducing new interaction models.",
-  },
-  {
-    slug: "dental-clinic-website",
-    title: "Dental Clinic",
-    category: "Healthcare · Website",
-    projectType: "design",
-    year: "2025",
-    role: "UI/UX Design, Web Development",
-    tagline: "A calm, appointment-first website designed to lower the anxiety that usually precedes booking a dental visit.",
-    cover: "/images/projects/dental_desktop_mockup.png",
-    color: "#22C55E",
-    tech: ["Figma", "HTML/CSS", "JavaScript"],
-    screenshots: ["/images/projects/dental_desktop_mockup.png"],
-    overview:
-      "Most local clinic websites lead with the practice's history and staff bios. This project reordered priorities around what a new patient actually needs first: services, cost expectations, and a fast way to book.",
-    challenge:
-      "Dental visits carry real anxiety for many visitors. The design needed warmth without cliché (no stock smiling-patient photography) and clarity without feeling clinical or cold.",
-    research: [
-      "Reviewed patient reviews of comparable clinics to identify the specific anxieties driving booking hesitation (cost uncertainty, pain, wait times).",
-      "Mapped the shortest possible path from landing to confirmed appointment.",
-    ],
-    wireframes:
-      "Wireframed a services-first homepage with visible pricing ranges and a persistent booking CTA, replacing the typical hero-bio-services ordering.",
-    userFlow:
-      "Land on service relevant to need → see approximate cost and duration → view available time slots → book → receive confirmation with prep instructions.",
-    designProcess: [
-      "Used a soft, warm-neutral palette with a single confident accent to counter typical clinical coldness.",
-      "Replaced generic stock photography with clean iconography and real clinic interior photography.",
-      "Surfaced pricing ranges directly, addressing the top researched source of booking hesitation.",
-    ],
-    designSystem: [
-      "Service card components with price range, duration, and one-tap booking",
-      "Soft-rounded UI language distinct from the sharper, technical style of the portfolio's SaaS work",
-    ],
-    highFidelity:
-      "Final UI balanced warmth and legibility, tested for readability with older visitor demographics in mind.",
-    prototype:
-      "Prototyped the booking flow end-to-end and tested it with non-technical users unfamiliar with the clinic.",
-    development:
-      "Built as a fast, lightweight HTML/CSS/JS site optimized for mobile booking completion.",
-    results: [
-      { label: "Booking completion rate", value: "+31%" },
-      { label: "Mobile load time", value: "1.2s" },
-      { label: "Bounce rate", value: "-22%" },
-    ],
-    lessons:
-      "Removing ambiguity around cost did more to reduce booking anxiety than any amount of reassuring copy — the data itself was the reassurance.",
-  },
-  {
     slug: "career-pilot-ai",
     title: "Career Pilot",
     category: "AI Platform · Career Guidance",
@@ -320,53 +320,6 @@ export const projects: Project[] = [
     ],
     lessons:
       "Trust in AI-generated advice comes from showing reasoning, not from confident phrasing. Every round of testing confirmed that 'why' mattered more than 'what.'",
-  },
-  {
-    slug: "quizme-ai",
-    title: "QuizMe AI",
-    category: "AI Platform · Interactive Learning",
-    projectType: "development",
-    year: "2024",
-    role: "UI/UX Design, Full-Stack Development",
-    tagline: "An AI-powered quiz platform that turns any topic or document into an interactive, scored learning session.",
-    cover: "/images/projects/quizme-cover.jpg",
-    color: "#3B82F6",
-    tech: ["JavaScript", "HTML/CSS", "AI/LLM Integration"],
-    overview:
-      "Built from a long-running pattern of converting exam material into interactive quizzes across OS, Databases, Networking, AI, and Digital Logic Design, QuizMe generalized that pattern into a single AI-powered platform that generates topic-wise quizzes with explanations and analysis.",
-    challenge:
-      "The tool needed to generate quiz questions that were actually pedagogically useful — testing understanding, not just recall — while keeping the interface simple enough to use in a single sitting before an exam.",
-    research: [
-      "Reviewed which quiz formats (from prior hand-built quizzes) produced the most useful self-assessment for students.",
-      "Identified topic-wise breakdown and explanations as the two features students valued most in earlier versions.",
-    ],
-    wireframes:
-      "Wireframed a single-session flow: input topic or material → generated quiz → immediate scoring with explanations → topic-wise performance breakdown.",
-    userFlow:
-      "Enter topic/material → AI generates question set → answer with instant feedback → receive final score and per-topic analysis → retry weak topics.",
-    designProcess: [
-      "Kept the quiz-taking interface distraction-free — one question at a time, clear progress indicator, no unnecessary chrome.",
-      "Designed the post-quiz analysis screen as the product's real value: a topic-wise breakdown showing exactly where to focus next.",
-      "Reused and refined interaction patterns proven across the earlier OS, Databases, Networking, AI, and Digital Logic quizzes.",
-    ],
-    designSystem: [
-      "Single-question card component with inline explanation reveal",
-      "Topic-wise score visualization (radar/bar hybrid)",
-      "Consistent scoring and progress components across all quiz types",
-    ],
-    highFidelity:
-      "Final UI prioritized legibility and speed over decoration, since the product is typically used under exam-prep time pressure.",
-    prototype:
-      "Iterated directly through built HTML/JS prototypes rather than static mockups, testing question pacing and explanation timing live.",
-    development:
-      "Built as a self-contained HTML/JS widget architecture, with AI integration generating question sets and explanations per topic.",
-    results: [
-      { label: "Quiz completion rate", value: "84%" },
-      { label: "Topics covered", value: "6+ subjects" },
-      { label: "Repeat usage before exams", value: "High" },
-    ],
-    lessons:
-      "The analysis screen mattered more than the quiz itself. Students didn't just want a score — they wanted to know exactly what to study next.",
   },
 ];
 
