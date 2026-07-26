@@ -36,7 +36,7 @@ export default function About({ condensed = false }: AboutProps) {
 
         <div className={`mt-16 grid gap-12 ${condensed ? "lg:grid-cols-1 max-w-3xl" : "lg:grid-cols-[1fr_1fr]"}`}>
           <div className="space-y-6">
-            <RevealText as="p" className="text-lg leading-relaxed text-ink-secondary">
+            <RevealText as="p" className="text-md leading-relaxed text-ink-secondary">
               I&apos;m a Computer Science &amp; Engineering graduate who builds
               at the intersection of product design, AI engineering, and
               full-stack development. Most of my work starts as a real
@@ -44,14 +44,14 @@ export default function About({ condensed = false }: AboutProps) {
               who has no attention to spare, a founder who needs a landing
               page that actually converts.
             </RevealText>
-            <RevealText as="p" delay={0.1} className="text-lg leading-relaxed text-ink-secondary">
+            <RevealText as="p" delay={0.1} className="text-md leading-relaxed text-ink-secondary">
               I work across UI/UX design, AI task evaluation, and interactive
               web development, which means I rarely hand off a design without
               understanding exactly how it will be built — and I rarely ship
               code without having thought through how it should feel to use.
             </RevealText>
             {!condensed && (
-              <RevealText as="p" delay={0.2} className="text-lg leading-relaxed text-ink-secondary">
+              <RevealText as="p" delay={0.2} className="text-md leading-relaxed text-ink-secondary">
                 Outside of client work, I contribute to AI evaluation and
                 dataset design across engineering domains, and I mentor students
                 through competitive programming and career readiness — work
