@@ -362,14 +362,6 @@ export const experience: ExperienceItem[] = [
     tags: ["AI Evaluation", "Dataset Design", "Quality Gatekeeping"],
   },
   {
-    period: "2024",
-    title: "Best Lecturer",
-    org: "Africa to Silicon Valley (A2SV)",
-    description:
-      "Taught and mentored students through A2SV's competitive programming and career-readiness curriculum, recognized as Best Lecturer for clarity of instruction and student outcomes.",
-    tags: ["Teaching", "Mentorship", "Algorithms"],
-  },
-  {
     period: "2023 — 2024",
     title: "Software Engineering & Product Design",
     org: "Eskalate",
@@ -378,12 +370,12 @@ export const experience: ExperienceItem[] = [
     tags: ["Product Design", "Full-Stack", "Engineering"],
   },
   {
-    period: "2023",
-    title: "Robotic Games — Finalist",
-    org: "National Robotics Competition",
+    period: "2023 — 2024",
+    title: "Full-Stack Developer & UI/UX Designer (Intern)",
+    org: "Kuraz Technologies",
     description:
-      "Competed in a national robotics competition, applying systems thinking and rapid prototyping under competitive constraints.",
-    tags: ["Robotics", "Systems Thinking"],
+      "Contributed to the design and development of modern web applications by working across both UI/UX design and full-stack development. Collaborated with the development team to build responsive, user-centered interfaces, integrate frontend and backend features, and improve the overall user experience while following modern software engineering best practices.",
+    tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "Figma"],
   },
   {
     period: "2022 — 2023",
@@ -431,11 +423,6 @@ export const awards = [
   {
     title: "Generative AI for Africa Hackathon — Semi-Finalist",
     org: "Generative AI for Africa",
-    year: "2024",
-  },
-  {
-    title: "Best Lecturer",
-    org: "Africa to Silicon Valley (A2SV)",
     year: "2024",
   },
 ];
