@@ -452,8 +452,8 @@ export const processSteps = [
 ];
 
 export const contactInfo = {
-  email: "hello@bonsaadugna.dev",
-  linkedin: "https://linkedin.com/in/bonsa-adugna",
-  github: "https://github.com/bonsa-adugna",
+  email: "badugna643@gmail.com",
+  linkedin: "https://www.linkedin.com/in/boni-adugna/",
+  github: "https://github.com/Boniadgithub",
   resumeUrl: "/resume/Bonsa_Adugna_Resume_ML.pdf",
 };
