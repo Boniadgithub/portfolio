@@ -4,6 +4,7 @@ import TechCarousel from "@/components/sections/TechCarousel";
 import About from "@/components/sections/About";
 import ProjectCard from "@/components/sections/ProjectCard";
 import CTA from "@/components/sections/CTA";
+import VideoSection from "@/components/sections/VideoSection";
 import SectionHeading from "@/components/ui/SectionHeading";
 import MagneticButton from "@/components/ui/MagneticButton";
 import { ArrowRight } from "lucide-react";
@@ -45,6 +46,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Video Section */}
+      <VideoSection />
 
       {/* Brand CTA */}
       <CTA />
